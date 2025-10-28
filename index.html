@@ -41,17 +41,19 @@
       animation: fadeUp 0.8s ease-out;
     }
 
-    h1 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.75rem;
-      font-weight: 600;
-      line-height: 1.2;       /* Prevents clipping */
-      padding-bottom: 0.2em;  /* Ensures descenders visible */
-      letter-spacing: -0.01em;
-    }
+ h1 {
+  display: inline-block;              /* new: keeps text in its own box */
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25;                  /* slightly taller */
+  padding: 0.1em 0 0.25em 0;          /* bottom padding ensures descenders show */
+  letter-spacing: -0.01em;
+  overflow: visible;                  /* allow text to render fully */
+}
 
     p {
       font-size: 1rem;
